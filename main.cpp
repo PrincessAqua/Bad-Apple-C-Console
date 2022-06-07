@@ -1,10 +1,14 @@
 #include <iostream>
 #include <cstdio>
-#include <windows.h>
-#include <MMsystem.h>
-#include <string>
+#include <windows.h>  //For music
+#include <MMsystem.h> //For music
+#include <string>     
 #include <fstream>
 #include <thread>
+
+// To use this function make sure u add "winmm.lib" (with quotes) into the 
+// additional dependencies of the linker (at least in Visual Studio)
+// if u are using another IDE or it doesn't work u cant comment it to disable it.
 
 void playMusic()
 {
@@ -39,9 +43,9 @@ void printFrame(int frame)
 
 int main()
 {
-	std::thread t(playMusic);
+	std::thread t(playMusic); // Music
 
-	for (int index{0}; index < 6560; ++index)
+	for (int index{0}; index < 6560; ++index) // Video
 	{
 		printFrame(index);
 		Sleep(25);
